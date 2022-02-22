@@ -1,0 +1,18 @@
+[package]
+name = "comva"
+version = "0.1.0"
+edition = "2021"
+
+authors = ["Rijk van Putten <rijk@rijkvp.nl>"]
+description = "CLI tool to automate mass compression and conversion of media files."
+
+[dependencies]
+clap = { version = "3.1", features = ["derive"] }
+magick_rust = "0.15.0"
+anyhow = "1.0"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = 'abort'
